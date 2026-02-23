@@ -57,4 +57,12 @@ router.get('/faq', (req, res) => {
     res.render('faq');
 });
 
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
 module.exports = router;
