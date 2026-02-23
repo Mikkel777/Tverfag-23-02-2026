@@ -43,6 +43,16 @@ router.post('/rate', async (req, res) => {
     }
 });
 
+router.post('/delete/:id', async (req, res) => {
+    try {
+        await Review.findByIdAndDelete(req.params.id);
+        res.redirect('/');
+    } catch (err) {
+        console.error(err);
+        res.send("Error deleting review");
+    }
+});
+
 router.get('/faq', (req, res) => {
     res.render('faq');
 });
