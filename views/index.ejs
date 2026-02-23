@@ -1,14 +1,17 @@
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing page</title>
+    <title>Hoved side</title>
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <%- include('templates/nav') %>
-<main class="explanation">
+<div class="explanation">
     <h1>Vurderte nettsider</h1>
+    <h2>Her ser du alle nettsidene som har blitt vurdert i databasen vår.</h2>
+</div>
+<main class="cardReviews">
     <!-- reviews -->
     <% if (reviews && reviews.length > 0) { %>
         <% reviews.forEach(review => { %>
@@ -20,14 +23,14 @@
                     </a>
                 </h3>
 
-                <p>WCAG-score: <%= review.rating %>/5</p>
+                <p>WCAG-score: <%= review.rating %>/6</p>
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
 
                 <form action="/delete/<%= review._id %>" method="POST" onsubmit="return confirm ('Er du sikker du vill slette denne reviewen?')">
-                    <button class="buttonDelete" type="submit">Slett review</button>
+                    <button class="buttonDelete" type="submit">Slett Vurdering</button>
                 </form>
-            </div>
+            </div>  
 
         <% }) %>
     <% } else { %>
