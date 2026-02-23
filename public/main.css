@@ -7,7 +7,7 @@ body {
 
 .navbar {
     background: #111827;
-    padding: 19px;
+    padding: 21px;
 }
 
 .navbar a {
@@ -15,7 +15,7 @@ body {
     margin-right: 13px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .navbar a:hover {
@@ -98,6 +98,16 @@ body {
 .buttonDelete:hover {
     background-color: rgb(200, 35, 50);
 }
+
+.Whyus{
+    margin-top: 180px;
+    padding: 30px;
+    background-color: #1a2438;
+    color: rgb(241, 241, 241);
+}
+
+/* Index voting (Adding later)*/
+
 
 /* Rate wcag under */
 
