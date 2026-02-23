@@ -9,4 +9,8 @@ router.get('/rate', (req, res) => {
     res.render('rate');
 });
 
+router.get('/faq', (req, res) => {
+    res.render('faq');
+});
+
 module.exports = router;
