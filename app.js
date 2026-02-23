@@ -2,6 +2,7 @@ const express = require('express');
 const routes = require('./router/routes');
 const mongoose = require('mongoose');
 const path = require('path');
+const Review = require("./models/review");
 
 const app = express();
 
@@ -10,6 +11,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); //lese json
 app.use(express.urlencoded({ extended: true }));
+
+mongoose.connect("mongodb://127.0.0.1:27017/wcagDB") //Temp
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log(err));
 
 app.use('/', routes);
 
