@@ -6,15 +6,10 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="/">Homepage</a>
-            <a href="rate">Rate WCAG</a>
-            <a href="faq">FAQ</a>
-        </nav>
-    </header>
-<main class="explenation">
+    <%- include('templates/nav') %>
+<main class="explanation">
     <h1>Vurderte nettsider</h1>
+    <!-- reviews -->
     <% if (reviews && reviews.length > 0) { %>
         <% reviews.forEach(review => { %>
 
@@ -28,6 +23,10 @@
                 <p>WCAG-score: <%= review.rating %>/5</p>
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
+
+                <form action="/delete/<%= review._id %>" method="POST" onsubmit="return confirm ('du sikker?')">
+                    <button class="buttonDelete" type="submit">Slett review</button>
+                </form>
             </div>
 
         <% }) %>

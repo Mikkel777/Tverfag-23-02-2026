@@ -1,19 +1,35 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
     background: #f4f6f8;
 }
 
 .navbar {
     background: #1f2937;
-    padding: 15px;
+    padding: 19px;
 }
 
 .navbar a {
     color: white;
-    margin-right: 15px;
+    margin-right: 13px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 17px;
+}
+
+.buttonDelete {
+    max-width: 100px;
+}
+
+/* index */
+
+.explanation {
+    margin: 30px;
+}
+
+.explanation a {
+    color: rgb(45, 45, 255);
 }
 
 /* Rate wcag under */
@@ -48,7 +64,7 @@ input, select, textarea {
     border: 1px solid #ccc;
 }
 
-button {
+.buttonRate {
     margin-top: 20px;
     padding: 12px;
     background: #ab1cd6;
@@ -58,6 +74,21 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.buttonRate:hover {
     background: #8614a8;
+}
+
+/* faq */
+
+.Faq {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.Faq h1 {
+    font-size: 35px;
+}
+
+.Faq h2{
+    font-weight: 300;
 }
