@@ -24,7 +24,7 @@
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
 
-                <form action="/delete/<%= review._id %>" method="POST" onsubmit="return confirm ('du sikker?')">
+                <form action="/delete/<%= review._id %>" method="POST" onsubmit="return confirm ('Er du sikker du vill slette denne reviewen?')">
                     <button class="buttonDelete" type="submit">Slett review</button>
                 </form>
             </div>
