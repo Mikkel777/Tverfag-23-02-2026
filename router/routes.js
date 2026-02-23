@@ -53,6 +53,34 @@ router.post('/delete/:id', async (req, res) => {
     }
 });
 
+// Upvotes and downvotes
+
+router.post('/upvote/:id', async (req, res) => {
+    try {
+        await Review.findByIdAndUpdate(
+            req.params.id,
+            {$inc: {upvotes:1}}
+        );
+        res.redirect("/");
+    } catch (err) {
+        console.error(err);
+        res.send("Upvote error");
+    }
+});
+
+router.post('/downvote/:id', async (req, res) => {
+    try {
+        await Review.findByIdAndUpdate(
+            req.params.id,
+            {$inc: {downvotes:1}}
+        );
+        res.redirect("/");
+    } catch (err) {
+        console.error(err);
+        res.send("Downvote error");
+    }
+});
+
 router.get('/faq', (req, res) => {
     res.render('faq');
 });
