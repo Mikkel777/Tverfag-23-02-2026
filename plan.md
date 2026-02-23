@@ -24,3 +24,46 @@ Nettsiden skal gjøre det mulig å:
 - Lagre vurderinger permanent i databasen
 - Se hvilken bruker har skrevet vurderinger
 - Gi positivt og negativt tilbakemeldinger på vurderingene
+
+## Fremdriftsplan
+
+## Dag 1 - Design, planlegging og grunnleggende utvikling
+
+Eksempler på krav for nettsiden:
+- Bruker kan legge inn vurderinger
+- Vurderinger blir lagret permenant i databasen
+- Brukeren kan gi positiv/negativ valg (Up votes og downvotes)
+- Nettsider kan bli rangert fra værst til best, osv.
+
+## Database model (eksempel)
+
+*Users*
+- id
+- username
+
+*Websites*
+- id
+- name
+- url
+- image
+
+*Reviews*
+- rating
+- id
+- website id
+- user id
+- comment
+
+*Feedback*
+- id
+- review id
+-  type - positiv/negativ
+
+
+### Wireframe 
+Enkle skisser av:
+- Forside (Liste over nettsider + vurderinger)
+- Nettstedsside (Vurderinger)
+- side for å lage egen vurdering
+
+### Utvikling
