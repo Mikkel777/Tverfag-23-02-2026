@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
@@ -12,8 +13,40 @@
             <a href="faq">FAQ</a>
         </nav>
     </header>
-    <h2>rate</h2>
-    <section class="up-down">
-    </section>
+    <main class="container">
+        <h1>Vurder en nettside - WCAG</h1>
+        <p>Fyll ut skjemaet under for å vurdere UU til nettsiden.</p>
+        <section class="rate-card">
+            <form action="/rate" method="POST">
+                <label for="sitename">Nettsidens navn</label>
+                <input type="text" id="sitename" name="sitename" required>
+
+                <label for="url">Nettsidens adresse (URL)</label>
+                <input type="text" name="url" id="url" required>
+
+                <!-- Rating -->
+                <label for="rating">WCAG vurdering</label>
+                <select name="rating" id="rating">
+                    <option value="">Velg vurderingen</option>
+                    <option value="1">1 - Svært dårlig</option>
+                    <option value="2">2 - Dårlig</option>
+                    <option value="3">3 - OK</option>
+                    <option value="4">4 - Bra</option>
+                    <option value="5">5 - Svært bra</option>
+                </select>
+
+                 <!-- Comments -->
+                <label for="comment">Kommentar</label>
+                <textarea name="comment" id="comment" rows="5"></textarea>
+
+                  <!-- name -->
+                <label for="username">Ditt brukernavn</label>
+                <input type="text" name="username" id="username" required>
+
+                <button type="submit">Send vurderingen</button>
+
+            </form> 
+        </section>
+    </main>
 </body>
 </html>
