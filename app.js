@@ -21,7 +21,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/wcagDB") //Temp
+mongoose.connect("mongodb://10.12.7.201:27017/wcagDB") //Temp
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log(err));
 
