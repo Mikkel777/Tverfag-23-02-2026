@@ -27,13 +27,12 @@ router.get('/rate', async (req, res) => {
 
 router.post('/rate', async (req, res) => {
     try {
-        const { sitename, url, rating, comment, username} = req.body;
+        const { sitename, url, rating, comment} = req.body;
         const newReview = new Review ({
             sitename,
             url,
             rating,
-            comment,
-            username
+            comment
         });
         await newReview.save();
         res.redirect('/');
@@ -83,14 +82,6 @@ router.post('/downvote/:id', async (req, res) => {
 
 router.get('/faq', (req, res) => {
     res.render('faq');
-});
-
-router.get('/signup', (req, res) => {
-    res.render('signup');
-});
-
-router.get('/login', (req, res) => {
-    res.render('login');
 });
 
 module.exports = router;

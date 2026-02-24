@@ -8,7 +8,21 @@
 <body>
     <%- include('templates/nav') %>
     <main>
-        <h1>Temp Signup</h1>
+        <h1>Registrer bruker</h1>
+
+        <form action="/signup" method="POST">
+
+            <input name="username" required>
+
+            <input type="password" name="password" required>
+
+            <input type="password" name="confirm" required>
+
+            <button type="submit">Registrer</button>
+
+        </form>
+
+        <a href="/login">Har du bruker?</a>
     </main>
 </body>
 </html>

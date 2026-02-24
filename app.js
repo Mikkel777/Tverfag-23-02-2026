@@ -1,8 +1,10 @@
 const express = require('express');
 const routes = require('./router/routes');
 const mongoose = require('mongoose');
+const session = require("express-session");
 const path = require('path');
 const Review = require("./models/review");
+const authRoutes = require('./router/authroutes');
 
 const app = express();
 
@@ -12,11 +14,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); //lese json
 app.use(express.urlencoded({ extended: true }));
 
+//Marks session cookies
+app.use(session({
+  secret: 'supersecret',
+  resave: false,
+  saveUninitialized: false
+}));
+
 mongoose.connect("mongodb://127.0.0.1:27017/wcagDB") //Temp
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log(err));
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.username;
+    next();
+});
+
+//routes
 app.use('/', routes);
+app.use('/', authRoutes);
 
 app.use((req, res) => {
     res.status(404).send('404 - Page not found');

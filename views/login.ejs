@@ -7,8 +7,16 @@
 </head>
 <body>
     <%- include('templates/nav') %>
-    <main>
-        <h1>Temp login</h1>
+    <main class="container">
+        <section class="login-card">
+            <form action="/login" method="POST">
+                <h1>Logg inn</h1>
+                    <input name="username" placeholder="Brukernavn" required>
+                    <input type="password" name="password" placeholder="Passord" required>
+                    <button type="submit">Logg inn</button>
+                <p>Hvis du ikke har en bruker</p><a href="/signup">signup</a>
+            </form>
+        </section>
     </main>
 </body>
 </html>
