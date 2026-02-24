@@ -30,6 +30,7 @@ body {
 
 .explanation {
     margin: 30px;
+    margin-bottom: 65px;
 }
 
 .cardReviews {
@@ -47,7 +48,7 @@ body {
 }
 
 .cardReviews a {
-    color: rgb(45, 45, 255);
+    color: rgb(68, 68, 255);
     text-decoration: none;
 }
 
@@ -77,7 +78,8 @@ body {
 .review-card p {
     margin: 5px 0;
     overflow: auto;
-    max-height: 70px;
+    max-height: 72px;
+    margin-bottom: 7px;
 }
 
 .review-card small {
@@ -201,6 +203,87 @@ input, select, textarea {
 
 .buttonRate:hover {
     background: #1e4cad;
+}
+
+/* Profile */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(80vh - 130px);
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.profile-info {
+    margin: 30px 0;
+}
+
+.info-group {
+    margin-bottom: 20px;
+}
+
+.info-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-group p {
+    margin: 0;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+    font-size: 18px;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #2961db;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.profileDelete {
+    padding: 12px 5px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(220, 53, 69);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profileDelete:hover {
+    background-color: rgb(200, 35, 50);
+}
+
+.profileDelete:active {
+    transform: scale(0.98);
 }
 
 /* faq */

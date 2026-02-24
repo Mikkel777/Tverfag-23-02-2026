@@ -7,12 +7,23 @@
 </head>
 <body>
     <%- include('templates/nav') %>
-    <div class="container">
-        <h1>Profil</h1>
-        <p><strong>Brukernavn</strong> <%= user.username %></p>
-        <form action="/delete-user" method="POST" onsubmit="return confirm('Er du sikker at du vill slette kontoen din? Dette kan IKKE bli gjort om.')">
-            <button class="buttonDelete">Slett min bruker</button>
-        </form>
-    </div>
+    <main class="profile-container">
+        <section class="profile-card">
+            <h1>Profil</h1>
+
+            <div class="profil-info">
+                <div class="info-group">
+                    <label for="username">Brukernavn</label>
+                    <p id="username"><strong><%= user.username %></strong></p>
+                </div>
+            </div>
+
+
+                <form action="/delete-user" method="POST" onsubmit="return confirm('Er du sikker at du vil slette kontoen din? Dette kan IKKE angres.')">
+                    <button type="submit" class="profileDelete">Slett min bruker</button>
+                </form>
+                <p class="back-link"><a href="/">Tilbake til forsiden</a></p>
+        </section>
+    </main>
 </body>
 </html>
