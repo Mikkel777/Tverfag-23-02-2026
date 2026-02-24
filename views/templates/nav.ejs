@@ -1,16 +1,16 @@
-    <% if (user) { %>
-    <span>Innlogget som <%= user %></span>
-    <a href="/logout">Logg ut</a>
-<% } else { %>
-    <a href="/login">Logg inn</a>
-    <a href="/signup">Registrer</a>
-<% } %>
-    <header>
-        <nav class="navbar">
-            <a href="/">Homepage</a>
-            <a href="rate">Rate WCAG</a>
-            <a href="faq">FAQ</a>
+<header>
+    <nav class="navbar">
+        <a href="/">Alle vurderinger</a>
+        <a href="rate">Vurder WCAG</a>
+        <a href="faq">FAQ</a>
+        <% if (user) { %>
+            <!-- Logged in -->
+            <a href="profile">Profil</a>
+            <a href="logout">Logg ut</a>
+        <% } else { %>
+            <!-- Logged ou t -->
             <a href="signup">Signup</a>
             <a href="login">Login</a>
-        </nav>
-    </header>
+        <% } %>
+    </nav>
+</header>

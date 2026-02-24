@@ -56,8 +56,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 20px;
-    width: 300px;
-    max-height: 280px;
+    width: 350px;
+    max-height: 380px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -99,15 +99,63 @@ body {
     background-color: rgb(200, 35, 50);
 }
 
+/* Index voting (Adding later)*/
+
+.vote-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.vote-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Upvote */
+.upVote {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* Downvote */
+.downVote {
+    background-color: #c62828;
+    color: white;
+}
+
+/* Hover */
+.vote-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* WHen pressed button gets smaller */
+.vote-button:active {
+    transform: scale(0.97);
+}
+
+.vote-text {
+    font-size: 14px;
+}
+
 .Whyus{
     margin-top: 180px;
     padding: 30px;
     background-color: #1a2438;
     color: rgb(241, 241, 241);
 }
-
-/* Index voting (Adding later)*/
-
 
 /* Rate wcag under */
 

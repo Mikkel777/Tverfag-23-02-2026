@@ -26,12 +26,21 @@
                 <p>WCAG-score: <%= review.rating %>/6</p>
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
+                <div class="vote-group" role="group" aria-label="Stem på vurdering">
+                    <button class="vote-button upVote" type="button"aria-label="Gi tommel opp til denne vurderingen">
+                        <span aria-hidden="true">👍</span>
+                        <span class="vote-text">Opp</span>
+                    </button>
 
+                    <button class="vote-button downVote" type="button"aria-label="Gi tommel ned til denne vurderingen">
+                        <span aria-hidden="true">👎</span>
+                        <span class="vote-text">Ned</span>
+                    </button>
+                </div>
                 <% if (user === review.username || user === "Admin") { %>
 
                 <form action="/delete/<%= review._id %>" method="POST"
                     onsubmit="return confirm('Er du sikker du vil slette denne reviewen?')">
-
                     <button class="buttonDelete" type="submit">
                         Slett Vurdering
                     </button>
