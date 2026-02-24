@@ -7,14 +7,20 @@
 </head>
 <body>
     <%- include('templates/nav') %>
-    <main class="container">
+    <main class="login-container">
         <section class="login-card">
-            <form action="/login" method="POST">
+            <form action="/login" method="POST" aria-label="Logg inn med Brukernavn og Passord">
                 <h1>Logg inn</h1>
+                <label>
+                    Brukernavn
                     <input name="username" placeholder="Brukernavn" required>
+                </label>
+                <label>
+                    Passord
                     <input type="password" name="password" placeholder="Passord" required>
-                    <button type="submit">Logg inn</button>
-                <p>Hvis du ikke har en bruker</p><a href="/signup">signup</a>
+                </label>
+                <button type="submit">Logg inn</button>
+                <p>Hvis du ikke har en bruker <a href="/signup">registrer deg her</a></p>
             </form>
         </section>
     </main>

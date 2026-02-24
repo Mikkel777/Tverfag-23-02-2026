@@ -217,3 +217,219 @@ input, select, textarea {
 .Faq h2{
     font-weight: 300;
 }
+
+/* LOgin */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(80vh - 130px);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.login-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-card h1 {
+    margin: 0 0 20px 0;
+    font-size: 2em;
+    text-align: center;
+    color: #111827;
+}
+
+/* Label style */
+.login-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* Input stylin*/
+.login-card input {
+    padding: 12px;
+    margin-top: 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #2961db;
+    box-shadow: 0 0 0 2px rgba(41, 97, 219, 0.1);
+}
+
+.login-card input::placeholder {
+    color: #999;
+}
+
+.login-card button {
+    margin-top: 10px;
+    padding: 14px;
+    background: #2961db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-card button:hover {
+    background: #1e4cad;
+}
+
+.login-card button:active {
+    transform: scale(0.98);
+}
+
+/* Link styling */
+.login-card p {
+    text-align: center;
+    margin: 10px 0 0 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.login-card p a {
+    color: rgb(82, 82, 255);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login-card p a:hover {
+    text-decoration: underline;
+}
+
+/* Sign up */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(80vh - 130px);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.signup-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.signup-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.signup-card h1 {
+    margin: 0 0 20px 0;
+    font-size: 2em;
+    text-align: center;
+    color: #111827;
+}
+
+/* Label style */
+.signup-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* Input styling*/
+.signup-card input {
+    padding: 12px;
+    margin-top: 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.signup-card input:focus {
+    outline: none;
+    border-color: #2961db;
+    box-shadow: 0 0 0 2px rgba(41, 97, 219, 0.1);
+}
+
+.signup-card input::placeholder {
+    color: #999;
+}
+
+.signup-card button {
+    margin-top: 10px;
+    padding: 14px;
+    background: #2961db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.signup-card button:hover {
+    background: #1e4cad;
+}
+
+.signup-card button:active {
+    transform: scale(0.98);
+}
+
+/* Link styling */
+.signup-card p {
+    text-align: center;
+    margin: 10px 0 0 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.signup-card p a {
+    color: rgb(82, 82, 255);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.signup-card p a:hover {
+    text-decoration: underline;
+}
