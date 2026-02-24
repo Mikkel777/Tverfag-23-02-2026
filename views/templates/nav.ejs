@@ -1,3 +1,10 @@
+    <% if (user) { %>
+    <span>Innlogget som <%= user %></span>
+    <a href="/logout">Logg ut</a>
+<% } else { %>
+    <a href="/login">Logg inn</a>
+    <a href="/signup">Registrer</a>
+<% } %>
     <header>
         <nav class="navbar">
             <a href="/">Homepage</a>

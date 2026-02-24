@@ -27,9 +27,18 @@
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
 
-                <form action="/delete/<%= review._id %>" method="POST" onsubmit="return confirm ('Er du sikker du vill slette denne reviewen?')">
-                    <button class="buttonDelete" type="submit">Slett Vurdering</button>
+                <% if (user === review.username || user === "Admin") { %>
+
+                <form action="/delete/<%= review._id %>" method="POST"
+                    onsubmit="return confirm('Er du sikker du vil slette denne reviewen?')">
+
+                    <button class="buttonDelete" type="submit">
+                        Slett Vurdering
+                    </button>
+
                 </form>
+
+                <% } %>
             </div>  
 
         <% }) %>

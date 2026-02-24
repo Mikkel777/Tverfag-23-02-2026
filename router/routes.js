@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const requireLogin = require("../middleware/auth");
 const Review = require('../models/review');
 
 router.get('/', async (req, res) => {
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 
 // Rate routes, get and post
 
-router.get('/rate', async (req, res) => {
+router.get('/rate', requireLogin, async (req, res) => {
     try {
         const reviews = await Review.find().sort({createdAt: -1});
         res.render('rate', { reviews});
@@ -32,7 +33,8 @@ router.post('/rate', async (req, res) => {
             sitename,
             url,
             rating,
-            comment
+            comment,
+            username: req.session.username
         });
         await newReview.save();
         res.redirect('/');
@@ -44,11 +46,24 @@ router.post('/rate', async (req, res) => {
 
 router.post('/delete/:id', async (req, res) => {
     try {
+        const review = await Review.findbyid(req.params.id);
+        if(!review) {
+            return res.status(404).send("Review couldnt be found");
+        }
+        const loggedUser = req.session.username;
+
+        //ADMIN
+        if (
+            review.username !== loggedUser &&
+            loggedUser !== "Admin"
+        ) {
+            return res.status(403).send("Du kan ikke slette denne vurderingen.");
+        }
         await Review.findByIdAndDelete(req.params.id);
-        res.redirect('/');
+        res.redirect("/");
     } catch (err) {
         console.error(err);
-        res.send("Error deleting review");
+        res.status(500).send("Delete error");
     }
 });
 
