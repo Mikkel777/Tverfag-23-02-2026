@@ -99,4 +99,8 @@ router.get('/faq', (req, res) => {
     res.render('faq');
 });
 
+router.get('/profile', (req, res) => {
+    res.render('profile');
+});
+
 module.exports = router;
