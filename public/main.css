@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f2f5f8;
+    background: #f6f9fc;
 }
 
 .navbar {
@@ -58,7 +58,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 20px;
     width: 380px;
-    max-height: 450px;
+    max-height: 800px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -113,6 +113,7 @@ body {
     display: flex;
     gap: 30px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .vote-button {
