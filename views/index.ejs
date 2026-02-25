@@ -23,7 +23,7 @@
                     </a>
                 </h3>
 
-                <p>WCAG-score: <%= review.rating %>/6</p>
+                <p class="WCAG">WCAG-score: <%= review.rating %>/6</p>
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
                 <div class="vote-group" role="group" aria-label="Stem på vurdering">
@@ -44,20 +44,29 @@
                     <button class="buttonDelete" type="submit">
                         Slett Vurdering
                     </button>
-
                 </form>
-
                 <% } %>
+                <form action="/report/<%= review._id %>" method="POST" aria-label="Rapporter anmeldelse">
+                    <div class="form-group">
+                        <label for="reason-<%= review._id %>">Begrunnelse for rapport</label>
+                        <input type="text" id="reason-<%= review._id %>"name="reason" placeholder="Skriv inn begrunnelse" required>
+                    </div>
+                    <button type="submit">Rapporter</button>
+                </form>
             </div>  
-
         <% }) %>
     <% } else { %>
         <p>Ingen vurderinger enda.</p>
     <% } %>
 </main>
-<section class="Whyus">
-    <h2>Hvorfor oss?</h2>
-    <p>Vi er ditt beste valg for vurdering av nettsider, siden det er ingen andre.</p>
-</section>
+<footer>
+    <section class="Whyus">
+        <h2>Hvorfor oss?</h2>
+        <p>Vi er ditt beste valg for vurdering av nettsider, siden det er ingen andre.</p>
+        <nav class="navbar">
+        <a href="faq">FAQ</a>
+        </nav>
+    </section>
+</footer>
 </body>
 </html>

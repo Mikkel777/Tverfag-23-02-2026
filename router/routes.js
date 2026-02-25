@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const requireLogin = require("../middleware/auth");
+const { requireLogin, isAdmin } = require("../middleware/auth");
 const Review = require('../models/review');
 
 router.get('/', async (req, res) => {
@@ -51,7 +51,6 @@ router.post('/delete/:id', async (req, res) => {
             return res.status(404).send("Review couldnt be found");
         }
         const loggedUser = req.session.username;
-
         //ADMIN
         if (
             review.username !== loggedUser &&
