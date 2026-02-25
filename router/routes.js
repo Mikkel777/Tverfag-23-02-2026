@@ -44,14 +44,14 @@ router.post('/rate', async (req, res) => {
     }
 });
 
-router.post('/delete/:id', async (req, res) => {
+router.post('/delete/:id', requireLogin, async (req, res) => {
     try {
-        const review = await Review.findbyId(req.params.id);
-        if(!review) {
+        const review = await Review.findById(req.params.id);
+        if (!review) {
             return res.status(404).send("Review couldnt be found");
         }
         const loggedUser = req.session.username;
-        //ADMIN
+        // admin or creator can delete
         if (
             review.username !== loggedUser &&
             loggedUser !== "Admin"
