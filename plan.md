@@ -10,7 +10,7 @@ Prosjektet inkluderer tre fagområder:
 - Drift
 - Brukerstøtte
 
-Målet med oppgaven er å lage en fungerende mvp (minimum viable product) innen *2 dager*.
+Målet med oppgaven er å lage en fungerende mvp (minimum viable product) innen 2 dager.
 
 ## Hovedmål
 
@@ -29,11 +29,40 @@ Nettsiden skal gjøre det mulig å:
 
 ## Dag 1 - Design, planlegging og grunnleggende utvikling
 
-Eksempler på krav for nettsiden:
+Fokus:
+- Struktur og design
+- Databasekobling
+- Grunnleggende funksjonalitet
+
+Oppgaver:
+- Lage Express-server
+- Koble til MongoDB med Mongoose
+- Lage database-modeller (User, Review)
+- Implementere registrering og innlogging
+- Lage side for å opprette vurdering
+- Lagre vurderinger permanent
+- Lage visning av vurderinger på forsiden
+
+Krav:
 - Bruker kan legge inn vurderinger
-- Vurderinger blir lagret permenant i databasen
-- Brukeren kan gi positiv/negativ valg (Up votes og downvotes)
-- Nettsider kan bli rangert fra værst til best, osv.
+- Data lagres permanent i databasen
+- Innlogget bruker knyttes til vurdering
+
+### Dag 2 – Videreutvikling og drift
+
+Fokus:
+- Sikkerhet
+- Brukerfunksjoner
+- Serveroppsett
+
+Oppgaver:
+- Upvote / downvote system
+- Begrense stemmer til én per bruker
+- Admin-panel for rapporter
+- Profilside
+- Mulighet for å slette egen bruker
+- Deploy på VM-servere
+- Brannmur og nettverkssikkerhet
 
 ## Database model (eksempel)
 
@@ -54,16 +83,55 @@ Eksempler på krav for nettsiden:
 - user id
 - comment
 
+*Reports*
+- id
+- reviewId
+- reportedBy
+- reason
+- createdAt
+
 *Feedback*
 - id
 - review id
 -  type - positiv/negativ
 
 
-### Wireframe 
-Enkle skisser av:
-- Forside (Liste over nettsider + vurderinger)
-- Nettstedsside (Vurderinger)
-- side for å lage egen vurdering
+### Wireframe  (konsept)
+
+
+Det ble laget enkle skisser av:
+
+- *Forside*
+  - Liste over vurderinger
+  - Stemmeknapper
+  - Lenker til nettsteder
+
+- *Rate-side*
+  - Skjema for ny vurdering
+
+- *Profilside*
+  - Brukerinformasjon
+  - Slett bruker
+
+- *Admin-side*
+  - Liste over rapporterte vurderinger
 
 ### Utvikling
+
+Frontend:
+- Html
+- Css
+- EJS templates
+- Litt JS
+
+Backend:
+- Node.js
+- Express
+
+Database:
+- Mongodb
+-Mongoose
+
+Autentisering:
+- Express-session
+- Bcrypt (Hasing passord)
