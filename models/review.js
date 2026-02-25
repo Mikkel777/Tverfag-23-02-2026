@@ -25,6 +25,7 @@ const reviewSchema = new mongoose.Schema ({
         type: Date,
         default: Date.now
     },
+    // Voting
     upvotes: {
         type: Number,
         default: 0
@@ -32,7 +33,13 @@ const reviewSchema = new mongoose.Schema ({
     downvotes: {
         type: Number,
         default: 0
-    }
+    },
+    voters: [
+        {
+            username: String,
+            vote: String
+        }
+    ]
 });
 
 module.exports = mongoose.model("Review", reviewSchema);

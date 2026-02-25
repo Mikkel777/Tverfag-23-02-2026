@@ -46,7 +46,7 @@ router.post('/rate', async (req, res) => {
 
 router.post('/delete/:id', async (req, res) => {
     try {
-        const review = await Review.findbyid(req.params.id);
+        const review = await Review.findbyId(req.params.id);
         if(!review) {
             return res.status(404).send("Review couldnt be found");
         }
@@ -68,7 +68,7 @@ router.post('/delete/:id', async (req, res) => {
 
 // Upvotes and downvotes
 
-router.post('/upvote/:id', async (req, res) => {
+router.post('/upvote/:id', requireLogin, async (req, res) => {
     try {
         await Review.findByIdAndUpdate(
             req.params.id,
@@ -81,7 +81,7 @@ router.post('/upvote/:id', async (req, res) => {
     }
 });
 
-router.post('/downvote/:id', async (req, res) => {
+router.post('/downvote/:id', requireLogin, async (req, res) => {
     try {
         await Review.findByIdAndUpdate(
             req.params.id,

@@ -30,15 +30,21 @@
                 <p><%= review.comment %></p>
                 <small>Laget av: <%= review.username %></small>
                 <div class="vote-group" role="group" aria-label="Stem på vurdering">
-                    <button class="vote-button upVote" type="button"aria-label="Gi tommel opp til denne vurderingen">
-                        <span aria-hidden="true">👍</span>
-                        <span class="vote-text">Opp</span>
-                    </button>
 
-                    <button class="vote-button downVote" type="button"aria-label="Gi tommel ned til denne vurderingen">
-                        <span aria-hidden="true">👎</span>
-                        <span class="vote-text">Ned</span>
-                    </button>
+                    <!-- UPVOTE -->
+                    <form action="/upvote/<%= review._id %>" method="POST">
+                        <button class="vote-button" type="submit">
+                            👍 Opp (<%= review.upvotes %>)
+                        </button>
+                    </form>
+
+                    <!-- DOWNVOTE -->
+                    <form action="/downvote/<%= review._id %>" method="POST">
+                        <button class="vote-button" type="submit">
+                            👎 Ned (<%= review.downvotes %>)
+                        </button>
+                    </form>
+
                 </div>
                 <% if (user === review.username || user === "Admin") { %>
 
