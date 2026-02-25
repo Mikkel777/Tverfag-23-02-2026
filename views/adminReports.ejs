@@ -11,16 +11,26 @@
         <section>
             <h1>Rapporterte reviews</h1>
             <% reports.forEach(report => { %>
-                <div class="review-card">
+            <div class="review-card">
+                <% if (report.reviewId) { %>
 
                     <h3><%= report.reviewId.sitename %></h3>
                     <p>Grunn: <%= report.reason %></p>
                     <p>Rapportert av: <%= report.reportedBy %></p>
 
-                    <form action="/delete/<%= report.reviewId._id %>" method="POST"> <!-- Doesnt work as of 11:00 AM !-->
+                    <form action="/delete/<%= report.reviewId._id %>" method="POST">
                         <button>Slett review</button>
                     </form>
-                </div>
+
+                <% } else { %>
+
+                    <h3>Slettet vurdering</h3>
+                    <p>Grunn: <%= report.reason %></p>
+                    <p>Rapportert av: <%= report.reportedBy %></p>
+                    <p><em>Denne vurderingen finnes ikke lenger.</em></p>
+
+                <% } %>
+            </div>
             <% }) %>
         </section>
     </main>
