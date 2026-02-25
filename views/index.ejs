@@ -11,6 +11,9 @@
     <h1>Vurderte nettsider</h1>
     <h2>Her ser du alle nettsidene som har blitt vurdert i databasen vår.</h2>
 </div>
+<div class="sort-container">
+    <button id="sortBtn">Sorter WCAG-score</button>
+</div>
 <main class="cardReviews">
     <!-- reviews -->
     <% if (reviews && reviews.length > 0) { %>
@@ -51,7 +54,7 @@
                         <label for="reason-<%= review._id %>">Begrunnelse for rapport</label>
                         <input type="text" id="reason-<%= review._id %>"name="reason" placeholder="Skriv inn begrunnelse" required>
                     </div>
-                    <button type="submit">Rapporter</button>
+                    <button class="form-button" type="submit">Rapporter</button>
                 </form>
             </div>  
         <% }) %>
@@ -68,5 +71,24 @@
         </nav>
     </section>
 </footer>
+<!-- Script for button  -->
+<script>
+let ascending = true;
+document.getElementById('sortBtn').addEventListener('click', () => {
+    const container = document.querySelector('.cardReviews');
+    const reviews = Array.from(container.querySelectorAll('.review-card'));
+
+    reviews.sort((a, b) => {
+        const aScore = parseFloat(a.querySelector('.WCAG').textContent.match(/(\d+)/)[0]);
+        const bScore = parseFloat(b.querySelector('.WCAG').textContent.match(/(\d+)/)[0]);
+        return ascending ? aScore - bScore : bScore - aScore;
+    });
+
+    container.innerHTML = '';
+    reviews.forEach(r => container.appendChild(r));
+
+    ascending = !ascending;
+});
+</script>
 </body>
 </html>

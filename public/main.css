@@ -162,6 +162,51 @@ body {
     color: rgb(241, 241, 241);
 }
 
+/* sort button */
+.sort-container button{
+    margin: 30px;
+    background-color: #3535ff;
+    color: rgb(247, 247, 247);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Report Review */
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #111827;
+    font-size: 13px;
+}
+
+.form-button {
+    padding: 8px 14px;
+    max-width: 50%;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(222, 0, 0);
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+    background-color: #bb0000;
+}
+
+
 /* Rate wcag under */
 
 .container {
