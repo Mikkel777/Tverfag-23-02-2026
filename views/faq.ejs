@@ -2,17 +2,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faq</title>
+    <title>FAQ</title>
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <%- include('templates/nav') %>
-    <main class="Faq">
-        <h1>Frequently Asked Questions!</h1>
-        <h2>How do I make my own review?</h2>
-        <p>Click on the "Rate WCAG" link top left of your screen.</p>
-        <h2>How do I see reviews?</h2>
-        <p>Go to the homepage and you'll see all the reviews made in our database.</p>
+
+    <main class="faq-container">
+
+        <h1>Ofte Stilte Spørsmål</h1>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Hvordan lager jeg en vurdering?
+            </button>
+            <div class="faq-answer">
+                <p>Trykk på "Vurder WCAG" på navigasjons baren og fyll ut skjemaet.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Hvordan ser jeg vurderinger?
+            </button>
+            <div class="faq-answer">
+                <p>Alle vurderinger blir vist på hjemmesiden.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Hvem kan slette vurderinger?
+            </button>
+            <div class="faq-answer">
+                <p>Bare eieren av vurderingen eller en administrator kan slette de.</p>
+            </div>
+        </div>
     </main>
+    <!-- Popup for the answers -->
+    <script>
+        document.querySelectorAll(".faq-question").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const answer = btn.nextElementSibling;
+                answer.classList.toggle("open");
+            });
+        });
+    </script>
 </body>
 </html>

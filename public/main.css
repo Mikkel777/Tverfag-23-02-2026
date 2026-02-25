@@ -59,6 +59,7 @@ body {
     padding: 20px;
     width: 380px;
     max-height: 450px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -290,17 +291,56 @@ input, select, textarea {
 
 /* faq */
 
-.Faq {
-    margin-top: 100px;
+/* FAQ */
+
+.faq-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.faq-container h1 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.Faq h1 {
-    font-size: 35px;
+.faq-item {
+    margin-bottom: 15px;
 }
 
-.Faq h2{
-    font-weight: 300;
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* .faq-question button {
+    transition: transform 0.3s ease-in-out;
+}
+
+.fag-question button:hover {
+    transform: scale(1.01);
+} */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.faq-answer.open {
+    max-height: 150px;
+    padding: 15px;
 }
 
 /* LOgin */
