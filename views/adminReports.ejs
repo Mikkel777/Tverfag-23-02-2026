@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPage</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('templates/nav') %>
+    <main class="container">
+        <section>
+            <h1>Rapporterte reviews</h1>
+
+            <% reports.forEach(report => { %>
+                <div class="review-card">
+
+                    <h3><%= report.reviewId.sitename %></h3>
+
+                    <p>Grunn: <%= report.reason %></p>
+                    <p>Rapportert av: <%= report.reportedBy %></p>
+
+                    <form action="/delete/<%= report.reviewId._id %>" method="POST">
+                        <button>Slett review</button>
+                    </form>
+
+                </div>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const requireLogin = require("../middleware/auth");
+const { requireLogin, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
 
 const router = express.Router();
@@ -61,6 +61,7 @@ router.post('/login', async (req, res)=> {
 
     req.session.userId = user._id;
     req.session.username = user.username;
+    req.session.role = user.role; // for admin
     
     res.redirect('/');
 });
@@ -73,7 +74,7 @@ router.get('/logout', (req, res) => {
   });
 });
 
-router.get('profile', requireLogin, async (req, res) => {
+router.get('/profile', requireLogin, async (req, res) => {
     const user = await User.findById(req.session.userId);
     res.render("profile", {user});
 });

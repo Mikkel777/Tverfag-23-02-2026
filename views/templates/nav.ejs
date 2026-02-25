@@ -2,7 +2,6 @@
     <nav class="navbar">
         <a href="/">Alle vurderinger</a>
         <a href="rate">Vurder WCAG</a>
-        <a href="faq">FAQ</a>
         <% if (user) { %>
             <!-- Logged in -->
             <a href="profile">Profil</a>
@@ -12,5 +11,8 @@
             <a href="signup">Signup</a>
             <a href="login">Login</a>
         <% } %>
+        <% if (role === "admin") { %>
+        <a href="/admin/reports">Admin Dashboard</a>
+    <% } %>
     </nav>
 </header>
