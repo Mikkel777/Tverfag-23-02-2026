@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar">
-        <a href="/">Alle vurderinger</a>
+        <a href="/">Hjemmeside</a>
         <a href="rate">Vurder WCAG</a>
         <% if (user) { %>
             <!-- Logged in -->
@@ -8,7 +8,7 @@
             <a href="logout">Logg ut</a>
         <% } else { %>
             <!-- Logged ou t -->
-            <a href="signup">Signup</a>
+            <a href="signup">Registrer</a>
             <a href="login">Login</a>
         <% } %>
         <% if (role === "admin") { %>
