@@ -52,6 +52,7 @@ Mongodb blir kun brukt av node serveren
 
 ## Nettverkssikkerhet
 
+
 Tiltak som ble implementert:
 
 - Database kjører på egen VM

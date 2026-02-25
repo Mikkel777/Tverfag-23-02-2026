@@ -14,7 +14,7 @@ Målet med oppgaven er å lage en fungerende mvp (minimum viable product) innen 
 
 ## Hovedmål
 
-Nettsiden skal gjøre det mulig å:
+Nettsiden skal gjøre det mulig å::
 
 - Se en liste over vurderte sider
 - Legge til nye nettsider (Kanskje)
