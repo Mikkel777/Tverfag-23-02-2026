@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* NAVBAR CONTAINER */
+/* NAVBAR */
 .navbar {
     background-color: #ffffff;
     padding: 16px 32px;
@@ -24,7 +24,7 @@ html {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* cleaner than margin-right */
+    gap: 20px;
 }
 
 /* LINKS */
@@ -39,13 +39,11 @@ html {
     transition: all 0.2s ease;
 }
 
-/* HOVER EFFECT */
 .navbar a:hover {
     background-color: #eef4ff;
     color: #2563eb;
 }
 
-/* ACTIVE / BRAND LINK */
 .nav-left a:first-child {
     font-size: 20px;
     font-weight: 700;
@@ -92,7 +90,7 @@ footer a {
     text-align: center;
     padding: 40px 20px;
     font-size: 36px;
-    color: rgb(75, 75, 255);
+    color: rgb(44, 44, 255);
 }
 
 .cardReviews {
@@ -121,7 +119,7 @@ footer a {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 20px;
     width: 380px;
-    max-height: 450px;
+    max-height: 570px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
