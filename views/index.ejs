@@ -2,19 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hjemmeside</title>
+    <title>Sjekket & Godkjent</title>
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <%- include('templates/nav') %>
 <div class="explanation">
-    <h1>Vurderte nettsider</h1>
-    <h2>Her ser du alle nettsidene som har blitt vurdert i databasen vår.</h2>
+    <h1>Sjekket & Godkjent</h1>
+    <h2>Her vil du se alle nettsidene som har blitt vurdert i databasen vår.</h2>
 </div>
 <div class="sort-container">
-    <button id="sortBtn">Sorter WCAG-score</button>
+    <button id="sortBtn" aria-label="Trykk på denne knappen for å sortere WCAG-score's">Sorter WCAG-score</button>
 </div>
-<main class="cardReviews">
+<main id="reviews" class="cardReviews">
     <!-- reviews -->
     <% if (reviews && reviews.length > 0) { %>
         <% reviews.forEach(review => { %>
@@ -72,7 +72,7 @@
     <section class="Whyus">
         <h2>Hvorfor oss?</h2>
         <p>Vi er ditt beste valg for vurdering av nettsider, siden det er ingen andre.</p>
-        <nav class="navbar">
+        <nav>
         <a href="faq">FAQ</a>
         </nav>
     </section>

@@ -1,18 +1,20 @@
 <header>
     <nav class="navbar">
-        <a href="/">Hjemmeside</a>
-        <a href="rate">Vurder WCAG</a>
-        <% if (user) { %>
-            <!-- Logged in -->
-            <a href="profile">Profil</a>
-            <a href="logout">Logg ut</a>
-        <% } else { %>
-            <!-- Logged ou t -->
-            <a href="signup">Registrer</a>
-            <a href="login">Login</a>
-        <% } %>
-        <% if (role === "admin") { %>
-        <a href="/admin/reports">Admin Dashboard</a>
-    <% } %>
+        <div class="nav-left">
+            <a href="/">Sjekket & Godkjent</a>
+            <a href="rate">Vurder WCAG</a>
+        </div>
+        <div class="nav-right">
+            <% if (user) { %>
+                <a href="profile">Profil</a>
+                <a href="logout">Logg ut</a>
+            <% } else { %>
+                <a href="signup">Registrer</a>
+                <a href="login">Login</a>
+            <% } %>
+            <% if (role === "admin") { %>
+                <a href="/admin/reports">Admin Dashboard</a>
+            <% } %>
+        </div>
     </nav>
 </header>

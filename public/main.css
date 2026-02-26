@@ -2,40 +2,102 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f6f9fc;
+    background: #eaf4ff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR CONTAINER */
 .navbar {
-    background: #111827;
-    padding: 21px;
+    background-color: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
 }
 
+/* GROUPS */
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* cleaner than margin-right */
+}
+
+/* LINKS */
 .navbar a {
-    color: #bac0ca;
-    margin-right: 13px;
+    color: #1f2937;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
 }
 
+/* HOVER EFFECT */
 .navbar a:hover {
-    color: #ffffff;
+    background-color: #eef4ff;
+    color: #2563eb;
+}
+
+/* ACTIVE / BRAND LINK */
+.nav-left a:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* BUTTON STYLE (login/signup) */
+.nav-right a[href="login"],
+.nav-right a[href="signup"] {
+    background-color: #2563eb;
+    color: white;
+}
+
+.nav-right a[href="login"]:hover,
+.nav-right a[href="signup"]:hover {
+    background-color: #1d4ed8;
+    color: white;
 }
 
 .buttonDelete {
     max-width: 100px;
 }
 
+footer {
+    background-color: #111827;
+}
+
+footer a {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #c0c0c0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
 /* index.css */
 
 .explanation {
-    margin: 30px;
-    margin-bottom: 65px;
+    min-height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 36px;
+    color: rgb(75, 75, 255);
 }
-
 
 .cardReviews {
     margin: 30px;
+    margin-left: 82px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -59,7 +121,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 20px;
     width: 380px;
-    max-height: 800px;
+    max-height: 450px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -167,13 +229,14 @@ body {
 /* sort button */
 .sort-container button{
     margin: 30px;
+    margin-left: 82px;
     background-color: #3535ff;
     color: rgb(247, 247, 247);
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 14px;
-    font-size: 16px;
+    padding: 14px 18px;
+    font-size: 18px;
     font-weight: bold;
     border: none;
     border-radius: 6px;
@@ -335,9 +398,6 @@ input, select, textarea {
 .profileDelete:active {
     transform: scale(0.98);
 }
-
-/* faq */
-
 /* FAQ */
 
 .faq-container {
@@ -484,7 +544,6 @@ input, select, textarea {
 .login-card p {
     text-align: center;
     margin: 10px 0 0 0;
-    color: #666;
     font-size: 15px;
 }
 
@@ -592,7 +651,6 @@ input, select, textarea {
 .signup-card p {
     text-align: center;
     margin: 10px 0 0 0;
-    color: #666;
     font-size: 15px;
 }
 
